@@ -27,6 +27,9 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+  <!-- Chatbot CSS File -->
+  <link href="assets/css/chatbot.css" rel="stylesheet">
+
   <!-- =======================================================
   * Template Name: DevFolio
   * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
@@ -51,6 +54,8 @@
         <ul>
           <li><a href="#hero" class="active">Home<br></a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#resume">Resume</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#services">Services</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
@@ -108,6 +113,11 @@
                 <p><strong>Profile: </strong> <span>Full Stack Developer</span></p>
                 <p><strong>Email: </strong> <span>farijariefqy11@gmail.com</span></p>
                 <p><strong>Phone: </strong> <span>+6281809717338</span></p>
+                <div style="margin-top: 25px;">
+                  <a href="#contact" class="btn-modern">
+                    <i class="bi bi-download"></i> Download CV
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -160,8 +170,44 @@
 
     </section><!-- /About Section -->
 
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row gy-4" data-aos="fade-up">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-briefcase-fill"></i>
+              <span class="stats-number" data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter">4</span>
+              <span class="stats-label">Years Experience</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-code-slash"></i>
+              <span class="stats-number" data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter">50</span>
+              <span class="stats-label">Projects Completed</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-people-fill"></i>
+              <span class="stats-number" data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter">3</span>
+              <span class="stats-label">Companies</span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item">
+              <i class="bi bi-award-fill"></i>
+              <span class="stats-number" data-purecounter-start="0" data-purecounter-end="100" data-purecounter-duration="1" class="purecounter">100</span>
+              <span class="stats-label">% Dedication</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Stats Section -->
+
     <!-- Resume Section -->
-    <section id="resume" class="resume section">
+    <section id="resume" class="resume section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -176,17 +222,20 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
             <h3 class="resume-title">Education</h3>
+            <div class="resume-timeline">
             <div class="resume-item">
               <h4>Bachelor of Informatics</h4>
               <h5>2015 - 2019</h5>
               <p><em>Universitas PGRI Semarang</em></p>
-              <p>Graduated with a GPA of 3.51/4.0, focusing on software development, database management, and web technologies.</p>
+              <p>Graduated with a GPA of 3.55/4.0, focusing on software development, database management, and web technologies.</p>
             </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Timeline -->
 
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-timeline">
             <div class="resume-item">
               <h4>Java Full-Stack Developer</h4>
               <h5>Oct 2023 – Present</h5>
@@ -234,6 +283,7 @@
               </ul>
 
             </div><!-- Edn Resume Item -->
+            </div><!-- End Resume Timeline -->
 
           </div>
 
@@ -243,8 +293,102 @@
 
     </section><!-- /Resume Section -->
 
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Check out some of my recent projects and achievements</p>
+      </div>
+
+      <div class="container">
+        <div class="portfolio-grid">
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="100">
+            <img src="assets/img/portfolio/app-1.jpg" alt="Agent Management System">
+            <div class="portfolio-info">
+              <h4>Agent Management System</h4>
+              <p>Enterprise-level system for managing agents with comprehensive features including reporting, scheduling, and data management.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Spring MVC</span>
+                <span class="tech-badge">Maven</span>
+                <span class="tech-badge">JasperReports</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="200">
+            <img src="assets/img/portfolio/product-3.jpg" alt="E-Tender System">
+            <div class="portfolio-info">
+              <h4>E-Tender System</h4>
+              <p>Comprehensive tender management system built with Laravel, handling entire procurement workflow from bidding to contract management.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="300">
+            <img src="assets/img/portfolio/app-3.jpg" alt="TapCash SDK">
+            <div class="portfolio-info">
+              <h4>TapCash SDK & Android App</h4>
+              <p>Developed SDK for partner integration and full-featured Android application for BNI's TapCash digital payment system.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">Android</span>
+                <span class="tech-badge">XML</span>
+                <span class="tech-badge">SDK</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="400">
+            <img src="assets/img/portfolio/branding-2.jpg" alt="SMS Banking System">
+            <div class="portfolio-info">
+              <h4>SMS Banking System</h4>
+              <p>Secure banking system enabling customers to perform transactions via SMS with robust security and real-time processing.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">Apache Cordova</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="500">
+            <img src="assets/img/portfolio/branding-3.jpg" alt="ERP System">
+            <div class="portfolio-info">
+              <h4>Enterprise Resource Planning</h4>
+              <p>Full-scale ERP system managing company resources, inventory, HR, and financial operations with real-time analytics.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">MySQL</span>
+                <span class="tech-badge">Vue.js</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-item" data-aos="fade-up" data-aos-delay="600">
+            <img src="assets/img/portfolio/books-1.jpg" alt="Recruitment System">
+            <div class="portfolio-info">
+              <h4>Recruitment Management System</h4>
+              <p>Streamlined recruitment platform handling job postings, applicant tracking, interviews, and hiring workflows.</p>
+              <div class="portfolio-tech">
+                <span class="tech-badge">Laravel</span>
+                <span class="tech-badge">PHP</span>
+                <span class="tech-badge">Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Portfolio Section -->
+
     <!-- Services Section -->
-    <section id="services" class="services section">
+    <section id="services" class="services section light-background">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -512,6 +656,61 @@
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
+  <!-- AI Chatbot -->
+  <div id="chatbot-container">
+    <button id="chatbot-toggle" class="chatbot-toggle" aria-label="Toggle chatbot">
+      <i class="bi bi-chat-dots-fill"></i>
+    </button>
+
+    <div id="chatbot-window" class="chatbot-window">
+      <div class="chatbot-header">
+        <div class="chatbot-header-content">
+          <div class="chatbot-avatar">
+            <i class="bi bi-robot"></i>
+          </div>
+          <div class="chatbot-title">
+            <h4>HR Assistant</h4>
+            <span class="chatbot-status">Online</span>
+          </div>
+        </div>
+        <button id="chatbot-close" class="chatbot-close-btn" aria-label="Close chatbot">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
+
+      <div class="chatbot-messages" id="chatbot-messages">
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <i class="bi bi-robot"></i>
+          </div>
+          <div class="message-content">
+            <p>Halo! Saya asisten virtual untuk membantu Anda mengenal Farij Ariefqy. Tanyakan apa saja tentang pengalaman kerja, skills, atau project yang pernah dikerjakan!</p>
+            <div class="quick-questions">
+              <p class="quick-questions-label">Pertanyaan cepat:</p>
+              <button class="quick-question-btn" data-question="Apa pengalaman kerja Farij?">Pengalaman kerja</button>
+              <button class="quick-question-btn" data-question="Apa saja skill yang dikuasai?">Skills</button>
+              <button class="quick-question-btn" data-question="Project apa saja yang pernah dikerjakan?">Portfolio</button>
+              <button class="quick-question-btn" data-question="Bagaimana cara menghubungi Farij?">Kontak</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-input-container">
+        <input
+          type="text"
+          id="chatbot-input"
+          class="chatbot-input"
+          placeholder="Ketik pertanyaan Anda..."
+          autocomplete="off"
+        />
+        <button id="chatbot-send" class="chatbot-send-btn" aria-label="Send message">
+          <i class="bi bi-send-fill"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
   <!-- Preloader -->
   <div id="preloader"></div>
 
@@ -529,6 +728,10 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Chatbot JS Files -->
+  <script src="assets/js/chatbot-data.js"></script>
+  <script src="assets/js/chatbot.js"></script>
 
 </body>
 

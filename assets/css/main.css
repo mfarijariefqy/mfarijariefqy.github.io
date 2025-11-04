@@ -18,13 +18,15 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #4e4e4e; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #0a090f; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #0078ff; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #1a1a2e; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #667eea; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --secondary-accent: #764ba2; /* Secondary accent for gradients */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --light-bg: #f8f9fa;
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -1626,4 +1628,372 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+}
+
+/*--------------------------------------------------------------
+# Modern Custom Styles
+--------------------------------------------------------------*/
+
+/* Modern Gradient Button */
+.btn-modern {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  color: white;
+  padding: 12px 35px;
+  border-radius: 50px;
+  border: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  text-decoration: none;
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+  color: white;
+}
+
+/* Stats/Achievement Section */
+.stats-section {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  color: white;
+  padding: 80px 0;
+}
+
+.stats-item {
+  text-align: center;
+  padding: 20px;
+}
+
+.stats-item i {
+  font-size: 48px;
+  margin-bottom: 15px;
+  opacity: 0.9;
+}
+
+.stats-item .stats-number {
+  font-size: 48px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stats-item .stats-label {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Modern Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+.portfolio-info {
+  padding: 25px;
+}
+
+.portfolio-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.portfolio-info p {
+  color: var(--default-color);
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.portfolio-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tech-badge {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* Modern Resume Timeline */
+.resume-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.resume-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+}
+
+.resume-item {
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+}
+
+.resume-item::before {
+  content: '';
+  position: absolute;
+  left: -47px;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid var(--accent-color);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.resume-item h4 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--heading-color);
+}
+
+.resume-item h5 {
+  font-size: 16px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  color: white;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.resume-item em {
+  color: var(--accent-color);
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Enhanced About Section */
+.about-info p {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.about-info strong {
+  color: var(--heading-color);
+  font-weight: 700;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.about-info span {
+  color: var(--default-color);
+}
+
+/* Enhanced Profile Image */
+.about .col-lg-5 img {
+  border-radius: 15px;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about .col-lg-5 img:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.3);
+}
+
+/* Modern Progress Bars */
+.progress-bar {
+  background: linear-gradient(90deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress-bar-wrap {
+  background: color-mix(in srgb, var(--accent-color), transparent 85%);
+  border-radius: 5px;
+}
+
+/* Enhanced Service Cards */
+.service-item {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  height: 100%;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+}
+
+.service-item .icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.service-item:hover .icon {
+  transform: rotate(360deg);
+}
+
+.service-item .icon i {
+  color: white;
+  font-size: 32px;
+}
+
+.service-item h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--heading-color);
+}
+
+.service-item p {
+  color: var(--default-color);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Enhanced Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.95) 0%, rgba(118, 75, 162, 0.95) 100%);
+}
+
+.hero::before {
+  background: none !important;
+}
+
+.hero h2 {
+  font-weight: 800;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.hero p {
+  font-weight: 500;
+}
+
+/* Contact Section Enhancement */
+.contact .info-item {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.contact .info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 35px rgba(102, 126, 234, 0.2);
+}
+
+.contact .info-item i {
+  color: var(--accent-color);
+  font-size: 32px;
+  margin-right: 20px;
+}
+
+.contact .php-email-form {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
+}
+
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+}
+
+.contact .php-email-form input:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.contact .php-email-form button[type="submit"] {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-accent) 100%);
+  border: none;
+  padding: 12px 40px;
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.contact .php-email-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stats-item .stats-number {
+    font-size: 36px;
+  }
+
+  .resume-timeline {
+    padding-left: 30px;
+  }
+
+  .resume-item::before {
+    left: -37px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
