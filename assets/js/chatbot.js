@@ -167,14 +167,12 @@ class HRChatbot {
     // Skills patterns
     if (this.matchPattern(lowerQuestion, ['skill', 'kemampuan', 'teknologi', 'tech stack', 'keahlian'])) {
       let response = `<p><strong>Skills & Expertise:</strong></p>`;
-      response += `<p><strong>Primary Skills:</strong></p><ul>`;
-      profileData.skills.primary.forEach(skill => {
-        response += `<li>${skill.name} - ${skill.level}%</li>`;
-      });
-      response += `</ul>`;
-      response += `<p><strong>Frameworks:</strong> ${profileData.skills.frameworks.join(', ')}</p>`;
-      response += `<p><strong>Frontend:</strong> ${profileData.skills.frontend.join(', ')}</p>`;
-      response += `<p><strong>Databases:</strong> ${profileData.skills.databases.join(', ')}</p>`;
+      const sk = profileData.skills;
+      response += `<p><strong>Bahasa:</strong> ${sk.languages.join(', ')}</p>`;
+      response += `<p><strong>Frameworks:</strong> ${sk.frameworks.join(', ')}</p>`;
+      response += `<p><strong>Databases:</strong> ${sk.databases.join(', ')}</p>`;
+      response += `<p><strong>Tools & DevOps:</strong> ${sk.tools.join(', ')}</p>`;
+      response += `<p><strong>Security & Cloud:</strong> ${sk.securityCloud.join(', ')}</p>`;
       return response;
     }
 
@@ -185,7 +183,7 @@ class HRChatbot {
               <p><strong>${edu.degree}</strong><br>
               ${edu.university} (${edu.period})<br>
               IPK: <strong>${edu.gpa}</strong></p>
-              <p>Fokus studi: ${edu.focus}</p>`;
+              <p>${edu.focus}</p>`;
     }
 
     // Projects/Portfolio patterns
@@ -194,7 +192,7 @@ class HRChatbot {
       profileData.projects.slice(0, 4).forEach(project => {
         response += `<li><strong>${project.name}</strong> - ${project.description}</li>`;
       });
-      response += `</ul><p>Total: <strong>${profileData.personalInfo.totalProjects}+ projects</strong> telah diselesaikan.</p>`;
+      response += `</ul><p>Lihat semua project di section <strong>Projects</strong>.</p>`;
       return response;
     }
 
@@ -247,17 +245,27 @@ class HRChatbot {
               <p><em>"${profileData.summary.split('.').slice(-2).join('.')}"</em></p>`;
     }
 
+    // Certification patterns
+    if (this.matchPattern(lowerQuestion, ['sertifikat', 'sertifikasi', 'certif', 'aws', 'ec-council', 'kursus', 'course'])) {
+      let response = `<p><strong>Courses & Certifications:</strong></p><ul>`;
+      profileData.certifications.forEach(c => {
+        response += `<li><strong>${c.name}</strong> — ${c.issuer} (${c.date})</li>`;
+      });
+      response += `</ul>`;
+      return response;
+    }
+
     // Java specific patterns
     if (this.matchPattern(lowerQuestion, ['java', 'spring', 'spring boot'])) {
       const javaExp = profileData.experience.filter(exp =>
         exp.technologies.includes('Java') || exp.technologies.includes('Spring MVC')
       );
-      return `<p>Farij memiliki <strong>expertise tinggi dalam Java development</strong> (90%).</p>
+      return `<p>Java adalah <strong>keahlian utama</strong> Farij, dipakai di sektor perbankan (BNI), asuransi, dan industri.</p>
               <p><strong>Pengalaman Java:</strong></p>
               <ul>
                 ${javaExp.map(exp => `<li>${exp.position} di ${exp.company}</li>`).join('')}
               </ul>
-              <p><strong>Teknologi Java yang dikuasai:</strong> Spring Boot, Spring MVC, Spring ORM, Maven, JasperReports, iText, Apache POI, Quartz Scheduler</p>`;
+              <p><strong>Teknologi Java yang dikuasai:</strong> Spring Boot, Spring MVC, REST API, Maven, Gradle, SQL Server, Android (Java)</p>`;
     }
 
     // PHP/Laravel specific patterns
@@ -265,28 +273,28 @@ class HRChatbot {
       const phpExp = profileData.experience.filter(exp =>
         exp.technologies.includes('PHP') || exp.technologies.includes('Laravel')
       );
-      return `<p>Farij memiliki <strong>expertise dalam PHP & Laravel development</strong> (85%).</p>
+      return `<p>Farij berpengalaman membangun sistem enterprise dengan <strong>PHP & Laravel</strong>.</p>
               <p><strong>Pengalaman Laravel:</strong></p>
               <ul>
                 ${phpExp.map(exp => `<li>${exp.position} di ${exp.company}</li>`).join('')}
               </ul>
-              <p><strong>Project Laravel:</strong> E-Tender System, ERP System, Recruitment System</p>`;
+              <p><strong>Project Laravel:</strong> ERP System, E-Tender System, Recruitment Web Application</p>`;
     }
 
     // Android patterns
     if (this.matchPattern(lowerQuestion, ['android', 'mobile'])) {
-      return `<p>Farij memiliki pengalaman dalam <strong>Android Native development</strong> (80%).</p>
+      return `<p>Farij memiliki pengalaman <strong>Android Native (Java)</strong> saat onsite di BNI.</p>
               <p><strong>Project Android:</strong></p>
               <ul>
-                <li>TapCash SDK untuk partner integration</li>
-                <li>TapCash Android App untuk BNI</li>
-                <li>SMS Banking Mobile App</li>
+                <li>TapCash SDK untuk integrasi partner dengan platform e-money BNI</li>
+                <li>Rebuild aplikasi TapCash Go (NFC e-money) dari nol</li>
+                <li>System Integration Testing (SIT) aplikasi Android & iOS</li>
               </ul>`;
     }
 
     // CV/Resume download
     if (this.matchPattern(lowerQuestion, ['cv', 'resume', 'download'])) {
-      return `<p>Untuk mendapatkan CV lengkap Farij, silakan klik tombol "Download CV" di section About atau hubungi melalui:</p>
+      return `<p>CV lengkap Farij bisa diunduh di sini: <a href="${profileData.personalInfo.cvUrl}" target="_blank">Download CV (PDF)</a>. Atau hubungi langsung melalui:</p>
               <ul>
                 <li>Email: ${profileData.personalInfo.email}</li>
                 <li>WhatsApp: ${profileData.personalInfo.phone}</li>
