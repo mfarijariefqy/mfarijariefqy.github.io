@@ -260,7 +260,9 @@ p { margin: 0; }
 .edu p { color: var(--muted); font-size: 15px; margin-top: 4px; }
 
 /* Projects */
-.projects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.projects { display: grid; grid-template-columns: repeat(6, 1fr); gap: 20px; }
+.projects .project { grid-column: span 2; }
+.projects .project.wide { grid-column: span 3; }
 .project {
   display: flex; flex-direction: column;
   border: 1px solid var(--border); border-radius: var(--radius);
@@ -365,6 +367,7 @@ p { margin: 0; }
   .card-1 { left: -20px; }
   .card-2 { right: -16px; }
   .projects { grid-template-columns: 1fr 1fr; }
+  .projects .project, .projects .project.wide { grid-column: auto; }
   .stats { grid-template-columns: 1fr 1fr; }
   .stat:nth-child(3) { border-left: 0; }
   .stat:nth-child(n+3) { border-top: 1px solid var(--border); }

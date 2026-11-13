@@ -42,12 +42,13 @@ const profileData = {
   experience: [
     {
       position: "Java Fullstack Developer",
-      company: "PT Klickers",
+      company: "PT Klickers (software company)",
       location: "Jakarta",
       period: "Oct 2023 – Present",
       responsibilities: [
-        "Developed and maintained an Agent Management System for insurance operations using Spring Framework (agent onboarding, lifecycle tracking, commission management)",
-        "Designed and implemented RESTful APIs for core insurance business processes on SQL Server",
+        "Developed and maintained an Insurance (Agency) Management System using Spring Framework (agents, organizational hierarchies, compensation structures, commission calculations)",
+        "Developed an Audit Management System (AMS) covering audit planning, execution, reporting, and follow-up",
+        "Designed and implemented RESTful APIs for core business processes on SQL Server",
         "Refactored legacy codebase applying Clean Code and design patterns (MVC, Service Layer, Repository)",
         "Collaborated with business analysts and QA teams on enhancements, bug resolution, and feature delivery",
         "Translated client business rules into scalable Java-based implementations"
@@ -87,9 +88,15 @@ const profileData = {
 
   projects: [
     {
-      name: "Agent Management System",
-      description: "Insurance agent onboarding, lifecycle tracking, and commission management",
+      name: "Insurance (Agency) Management System",
+      description: "Manages insurance agents, organizational hierarchies, and compensation structures in a centralized platform, with transparent commission calculations and performance oversight",
       technologies: ["Java", "Spring", "REST API", "SQL Server"],
+      company: "PT Klickers"
+    },
+    {
+      name: "Audit Management System (AMS)",
+      description: "Streamlines the end-to-end audit process: audit planning, execution, reporting, and follow-up",
+      technologies: ["Java", "Spring", "SQL Server"],
       company: "PT Klickers"
     },
     {
